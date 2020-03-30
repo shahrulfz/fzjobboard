@@ -1,6 +1,7 @@
 var express = require('Express');
 var app = express();
 var bodyParser = require('body-parser')
+var port = process.env.PORT || 3000;
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -38,4 +39,7 @@ app.get('*', function(req, res){
    res.send('Sorry, invalid URL.');
 });
 
-app.listen(3000);
+// app.listen(3000);
+app.listen(port, function () {
+   console.log(`Example app listening on port !`);
+});
